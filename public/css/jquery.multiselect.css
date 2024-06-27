@@ -1,0 +1,171 @@
+.ui-default-btn-theme{border-radius: 0.5rem;line-height: 22px;}
+.ui-default-btn-theme span{color: #080808;font-size: 14px;}
+.ui-multiselect {box-sizing: border-box; padding: 0.220rem 0.75rem; text-align:left; width: 100% !important;}
+.ui-multiselect.ui-default-btn-theme .ui-multiselect-open { float:right;width: 20px; height: 20px;overflow: hidden;text-align: center;display: flex;align-items: center;justify-content: flex-end;}
+.ui-multiselect.ui-default-btn-theme .ui-icon{margin: 0px;}
+.ui-multiselect-menu { display:none; box-sizing:border-box; position:absolute; text-align:left; z-index: 101; width:auto; height:auto; padding:0px; }
+.ui-multiselect-menu.ui-multiselect-listbox {position:relative; z-index: 0;}
+
+.ui-multiselect-header { display:block; box-sizing:border-box; position:relative; width:auto; padding:3px 0 3px 4px; margin-bottom:2px;}
+.ui-multiselect-header > ul { font-size:0.9em }
+.ui-multiselect-header li { float:left; margin:0 10px 0 0;}
+.ui-multiselect-header a { text-decoration:none; display: flex;align-items: center;color: #024890;}
+.ui-multiselect-header a:hover { text-decoration:underline; cursor: pointer;}
+.ui-multiselect-header a span{color: #024890;font-size: 13px;font-weight: 500;}
+.ui-multiselect-header .ui-icon { float:left; }
+.ui-multiselect-header .ui-multiselect-close { float:right; margin-right:0; text-align:right; display: none;}
+
+.ui-multiselect-checkboxes { display:block; box-sizing:border-box; position:relative; overflow:auto; width: auto; border: 0; padding: 4px 0 8px;scrollbar-color: #0671B8 transparent;scrollbar-width: thin;}
+.ui-multiselect-checkboxes li:not(.ui-multiselect-optgroup) { clear:both; font-size:0.9em; list-style: none; padding-right:3px;}
+.ui-multiselect-checkboxes label { border:1px solid transparent; cursor:default; display:block; padding:3px 1px 3px 21px; text-indent: -20px;}
+.ui-multiselect-checkboxes input { position:relative; top:1px; cursor: pointer;}
+.ui-multiselect-checkboxes img { height: 30px; vertical-align: middle; margin-right: 3px;}
+.ui-multiselect-grouplabel { border-bottom:1px solid; display:block; font-weight:bold; margin:1px 0; padding:3px; text-align:center; text-decoration:none; }
+.ui-multiselect-selectable { cursor: pointer; }
+.ui-multiselect-optgroup > ul { padding: 3px; }
+.ui-multiselect-columns { display: inline-block; vertical-align: top; }
+.ui-multiselect-collapser { float: left; padding: 0 1px; margin: 0; }
+.ui-multiselect-collapsed > ul { display:none }
+
+.ui-multiselect-single .ui-multiselect-checkboxes input { left:-9999px; position:absolute !important; top: auto !important; }
+.ui-multiselect-single .ui-multiselect-checkboxes label { padding:5px !important; text-indent: 0 !important; }
+
+.ui-multiselect.ui-multiselect-nowrap { white-space: nowrap }
+.ui-multiselect.ui-multiselect-nowrap > span { display: inline-block }
+.ui-multiselect-checkboxes.ui-multiselect-nowrap li,
+.ui-multiselect-checkboxes.ui-multiselect-nowrap a { white-space: nowrap }
+
+.ui-multiselect-measure > .ui-multiselect-header,
+.ui-multiselect-measure > .ui-multiselect-checkboxes { float: left; }
+.ui-multiselect-measure > .ui-multiselect-checkboxes { margin: 4px; overflow-y: scroll; }
+
+.ui-multiselect-resize { border: 2px dotted #00F }
+.ui-theme-widget-content.ui-multiselect-single .ui-multiselect-checkboxes{
+    padding-top: 0px;
+}
+
+@media print{
+    .ui-multiselect-menu {display: none;}
+}
+
+
+/****************************************************
+    Multiselect Filter/Searchbar styles
+****************************************************/
+
+.ui-multiselect-hasfilter ul { position:relative; top:2px;display: flex;}
+.ui-multiselect-hasfilter ul li{width: 100%;margin: 0px;}
+.ui-multiselect-hasfilter ul li a{width: 100%;padding: 4px 12px;text-decoration: none;}
+.ui-multiselect-hasfilter ul li a:hover{text-decoration: none;}
+.ui-multiselect-filter { margin-right:0px; font-size:1em; width:100%; }
+.ui-multiselect-header .ui-default-search-theme{width: 100%;}
+.ui-multiselect-header .ui-multiselect-filter input { width:100px; font-size:.9em; margin-left:5px; height:15px; padding:2px; border:1px solid #292929; -webkit-appearance:textfield; -webkit-box-sizing:content-box; }
+.ui-multiselect-header .ui-default-search-theme>input[type="search"]{display: block;width: 100%;padding: 0.375rem 0.75rem;border: none;margin: 0px;-webkit-box-sizing: border-box;height: auto;background-color: transparent;}
+.ui-multiselect-excluded {display: none}
+
+/****************************************************
+    Multiselect background icons styles
+****************************************************/
+.ui-theme-widget-content{
+
+}
+.ui-theme-widget-content .ui-multiselect-checkboxes{
+    overflow-x: hidden;
+}
+.ui-widget-header .ui-icon.ui-icon-check,
+.ui-widget-header .ui-icon.ui-icon-closethick{
+    height: 18.2px;
+    display: block;
+    background-size: 14px;
+    background-position: center;
+}
+.ui-widget-header .ui-icon.ui-icon-check{
+    margin-right: 4px;
+    background-image: url("../images/dropdown-check.svg");
+}
+.ui-widget-header .ui-icon.ui-icon-closethick{
+    margin-right: 4px;
+    background-image: url("../images/dropdown-uncheck.svg");
+}
+.ui-theme-widget-content .ui-multiselect-checkboxes li{
+    padding: 0px;
+}
+.ui-theme-widget-content .ui-multiselect-checkboxes label{
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0px;
+    text-indent: 0px;
+    align-items: center;
+}
+.ui-theme-widget-content .ui-multiselect-checkboxes label > span{
+    margin: 0px;
+    width: 100%;
+    position: relative;
+    color: var(--bs-black);
+    font-weight: 500;
+    font-size: 13px;
+    /*white-space: nowrap;*/
+    padding: 8px 12px;
+    padding-left: 40px;
+}
+.ui-theme-widget-content.ui-multiselect-single .ui-multiselect-header{
+    margin: 0px;
+}
+.ui-theme-widget-content.ui-multiselect-single .ui-multiselect-checkboxes label{
+    padding: 0px!important;
+}
+.ui-theme-widget-content.ui-multiselect-single .ui-multiselect-checkboxes label > span{
+    padding: 8px 12px;
+}
+.ui-theme-widget-content .ui-multiselect-checkboxes label:hover span,
+.ui-theme-widget-content .ui-multiselect-checkboxes label > input[type="checkbox"]:checked + span,
+.ui-theme-widget-content.ui-multiselect-single .ui-multiselect-checkboxes .ui-state-active{
+    background-color: #FFEDCA;
+}
+.ui-theme-widget-content .ui-multiselect-checkboxes label > input[type="checkbox"] + span:before{
+    width: 16px;
+    height: 16px;
+    content: "";
+    left: 12px;
+    top: 8px;
+    line-height: 20px;
+    display: block;
+    /*border-radius: 4px;*/
+    position: absolute;
+    border: none;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    print-color-adjust: exact;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='15' height='15' rx='1.5' stroke='%23838799'/%3E%3C/svg%3E");
+    background-repeat: no-repeat no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.ui-theme-widget-content .ui-multiselect-checkboxes label > input[type="checkbox"]:checked + span:before{
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='16' height='16' rx='2' fill='%23024890'/%3E%3Cpath d='M11.9278 4.08511L6.17287 10.0539L4.07221 7.85248C3.9628 7.7617 3.78775 7.7617 3.70022 7.85248L3.06565 8.51064C2.97812 8.60142 2.97812 8.78298 3.06565 8.89645L5.99781 11.9149C6.10722 12.0284 6.26039 12.0284 6.3698 11.9149L12.9344 5.10638C13.0219 5.0156 13.0219 4.83404 12.9344 4.72057L12.2998 4.08511C12.2123 3.97163 12.0372 3.97163 11.9278 4.08511Z' fill='white'/%3E%3C/svg%3E");
+    background-repeat: no-repeat no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.ui-multiselect-checkboxes input[type="checkbox"]{
+    --bs-form-check-bg: var(--bs-body-bg);
+    width: 16px;
+    height: 16px;
+    margin-top: 0em;
+    vertical-align: top;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-image: var(--bs-form-check-bg-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+    border-radius: 4px;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    print-color-adjust: exact;
+    display: none;
+}
