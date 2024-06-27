@@ -24,7 +24,7 @@
                     <img class="img-fluid mb-3 px-lg-5 px-md-0 px-0 Salesflo-Logo-custom-Width"
                         src="/images/Salesflo_logo.svg" alt="">
                     <h3 class="text-white my-1 d-lg-block d-md-block d-sm-none d-none">Tagline will be written here</h3>
-                    <h3 class="text-white my-1 d-lg-none d-md-none d-sm-block d-block">Welcome to Salesflo!</h3>
+                    <h3 class="text-white my-1 d-lg-none d-md-none d-sm-block d-block">Welcome to Promo Pro Portal!</h3>
                     <p class="text-white d-lg-block d-md-block d-sm-none d-none m-0 customFontSize-18px">Sub text will
                         be written here</p>
                     <p
@@ -82,7 +82,7 @@
                     <form method="POST" action="{{ route('login') }}" class="customFormWidth my-auto" id="loginForm">
                         @csrf
                         <h2 class="align-self-start fw-bold fs-3 mb-1 d-lg-block d-md-block d-sm-none d-none">Welcome to
-                            Salesflo!</h2>
+                            Promo Pro Portal!</h2>
                         <p class="align-self-start text-secondary small mb-3 d-lg-block d-md-block d-sm-none d-none">
                             Log in to fire up the system 🚀</p>
 

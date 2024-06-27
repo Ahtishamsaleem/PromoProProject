@@ -120,7 +120,7 @@ $(document).ready(function () {
     
     $(".form-single-select").multiselect({
         autoReset: true,
-        noneSelectedText: "Select a Brand",
+        noneSelectedText: "Select an Option",
     },).multiselectfilter({
         label: "",
         autoReset: true,

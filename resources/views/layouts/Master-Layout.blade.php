@@ -23,7 +23,7 @@
 
     @include('layouts.footer')
 
-    @yield('scripts')
+
     
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery-ui.js"></script>
@@ -42,6 +42,9 @@
     <script src="/js/contextMenu.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="/js/custom.js"></script>
+
+    
+    @yield('scripts')
 
 
 </body>
