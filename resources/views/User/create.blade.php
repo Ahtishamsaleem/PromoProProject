@@ -2,6 +2,12 @@
 
 @section('title')Create User @endsection
 
+@section('styles')
+<style>
+        input.is-invalid + .invalid-feedback { display: block; }
+</style>
+@endsection
+
 @section('body')
 <main class="main-content">
 
@@ -55,7 +61,7 @@
                         </div>
                         <div class="main-form-container px-md-5 px-3">
                             <h6 class="title small fw-bold mb-4 text-uppercase">User Information:</h6>
-                            <form class="main-form" action="{{route('users.store')}}" method="POST">
+                            <form class="main-form" action="{{route('users.store')}}" method="POST" id="userForm" >
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-7 col-12">
@@ -183,4 +189,54 @@
 </div>
 
 </main>
+@endsection
+
+@section('scripts')
+<!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script> -->
+
+<script>
+        $(document).ready(function(){
+            const UserTypePattern = /^[1-5]{1}$/;
+            const namePattern = /^[A-Za-z\s]{5,25}$/;
+            const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,25}$/;
+            const phonePattern = /^[0-9+\- ]{10,15}$/;
+            const passwordPattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/;
+
+            $("#userForm").on("submit", function(event){
+                let isValid = true;
+
+                isValid = validateField("#user_type", UserTypePattern, 'Select at least one user type') && isValid;
+                isValid = validateField("#username", namePattern, 'Username is not in a valid format') && isValid;
+                isValid = validateField("#first_name", namePattern, 'First name is not in a valid format') && isValid;
+                isValid = validateField("#last_name", namePattern, 'Last name is not in a valid format') && isValid;
+                isValid = validateField("#phone", phonePattern, 'Phone pattern is not valid') && isValid;
+                isValid = validateField("#email", emailPattern, 'Email address pattern is not valid') && isValid;
+                isValid = validateField("#password", passwordPattern, 'Password is not in a valid format') && isValid;
+
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+
+            function validateField(selector, pattern, errorMessage) {
+                const field = $(selector);
+                const value = field.val();
+                const feedbackElement = field.next(".invalid-feedback");
+
+                if (!pattern.test(value)) {
+                    field.addClass("is-invalid");
+                    if (feedbackElement.length === 0) {
+                        field.after('<div class="invalid-feedback">' + errorMessage + '</div>');
+                    } else {
+                        feedbackElement.text(errorMessage);
+                    }
+                    return false;
+                } else {
+                    field.removeClass("is-invalid");
+                    field.next(".invalid-feedback").text('');
+                    return true;
+                }
+            }
+        });
+</script>
 @endsection
