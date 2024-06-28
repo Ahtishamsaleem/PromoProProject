@@ -2,9 +2,15 @@
 
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\BusinessUnitController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ManufacturerController;
+use App\Http\Controllers\MasterSKUController;
 use App\Http\Controllers\Permission\permissionController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SKUController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +32,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('Users',[UserController::class, 'index'])->name('users');
     Route::get('UsersCreation',[UserController::class, 'create'])->name('users.creation');
     Route::post('UsersStored',[UserController::class, 'store'])->name('users.store');
+
+    Route::get('Product',[ManufacturerController::class,'index' ])->name('ShowAllProducts');
+    Route::get('BusinessUnit',[BusinessUnitController::class,'index' ])->name('ShowAllBussinessUnits');
+    Route::get('Category',[CategoryController::class,'index' ])->name('ShowAllCategories');
+    Route::get('Brand',[BrandController::class,'index' ])->name('ShowAllBrands');
+    Route::get('MasterSKU',[MasterSKUController::class,'index' ])->name('ShowAllMasterSKU');
+    Route::get('SKU',[SKUController::class,'index' ])->name('ShowAllSKU');
+    Route::get('Manufacturer',[ManufacturerController::class,'index' ])->name('ShowAllManufacturer');
 });
 
 

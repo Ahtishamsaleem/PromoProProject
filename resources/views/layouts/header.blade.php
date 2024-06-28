@@ -97,100 +97,6 @@
 <!-- 2 -->
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="icon-bold-location me-2"></i>Customer
-                    </a>
-                    <div
-                        class="dropdown-menu  border-0 rounded-4 shadow-sm p-0 mt-2 overflow-hidden customHeightDropDown">
-                        <div class="row m-0">
-                            <div
-                                class="col-lg-5 d-none d-lg-flex flex-column align-items-start justify-content-end bg-primary text-white p-3">
-                                <i class="icon-bold-location me-2 mb-2 fs-1"></i>
-                                <h3 class="fs-4 mb-2 fw-bold" for="">Customer</h3>
-                                <p class="customFontSize-12px m-0">
-                                    "The geography module provides a comprehensive database for storing and
-                                    accessing store locations and channel information, facilitating seamless
-                                    integration and analysis of spatial data."
-                                </p>
-                            </div>
-                            <div class="col col-lg-7 py-2 px-0">
-                                <ul class="p-0 list-unstyled overflow-y-scroll customHeightDropDownLi cs-scrollbar-style">
-                                    <li class="nav-item py-1">
-                                        <a href=""
-                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
-                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Customer
-                                        </a>
-                                    </li>
-                                    <!-- add More Sub-Menu items -->
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-<!-- 3 -->
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="icon-bold-location me-2"></i>Product
-                    </a>
-                    <div
-                        class="dropdown-menu  border-0 rounded-4 shadow-sm p-0 mt-2 overflow-hidden customHeightDropDown">
-                        <div class="row m-0">
-                            <div
-                                class="col-lg-5 d-none d-lg-flex flex-column align-items-start justify-content-end bg-primary text-white p-3">
-                                <i class="icon-bold-location me-2 mb-2 fs-1"></i>
-                                <h3 class="fs-4 mb-2 fw-bold" for="">Product</h3>
-                                <p class="customFontSize-12px m-0">
-                                    "The geography module provides a comprehensive database for storing and
-                                    accessing store locations and channel information, facilitating seamless
-                                    integration and analysis of spatial data."
-                                </p>
-                            </div>
-                            <div class="col col-lg-7 py-2 px-0">
-                                <ul class="p-0 list-unstyled overflow-y-scroll customHeightDropDownLi cs-scrollbar-style">
-                                    <li class="nav-item py-1">
-                                        <a href=""
-                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
-                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Master SKU
-                                        </a>
-                                    </li>
-                                    <li class="nav-item py-1">
-                                        <a href=""
-                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
-                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />SKU
-                                        </a>
-                                    </li>
-                                    <li class="nav-item py-1">
-                                        <a href=""
-                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
-                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Channel
-                                        </a>
-                                    </li>
-                                    <li class="nav-item py-1">
-                                        <a href=""
-                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
-                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Customer
-                                        </a>
-                                    </li>
-                                    <li class="nav-item py-1">
-                                        <a href=""
-                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
-                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Manufecturer
-                                        </a>
-                                    </li>
-                                    <li class="nav-item py-1">
-                                        <a href=""
-                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
-                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Virtual Hierarchy
-                                        </a>
-                                    </li>
-                                    <!-- add More Sub-Menu items -->
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-<!-- 4 -->
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="icon-bold-location me-2"></i>Budget
                     </a>
                     <div
@@ -211,7 +117,19 @@
                                     <li class="nav-item py-1">
                                         <a href=""
                                             class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
-                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Customer
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Budget Type
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href=""
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Budget Allocation
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href=""
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Budget Approval
                                         </a>
                                     </li>
                                     <!-- add More Sub-Menu items -->
@@ -220,10 +138,10 @@
                         </div>
                     </div>
                 </li>
-<!-- 5 -->
+<!-- 3 -->
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="icon-bold-location me-2"></i>Activity
+                        <i class="icon-bold-location me-2"></i>Trade Spend Activity
                     </a>
                     <div
                         class="dropdown-menu  border-0 rounded-4 shadow-sm p-0 mt-2 overflow-hidden customHeightDropDown">
@@ -231,7 +149,57 @@
                             <div
                                 class="col-lg-5 d-none d-lg-flex flex-column align-items-start justify-content-end bg-primary text-white p-3">
                                 <i class="icon-bold-location me-2 mb-2 fs-1"></i>
-                                <h3 class="fs-4 mb-2 fw-bold" for="">Activity</h3>
+                                <h3 class="fs-4 mb-2 fw-bold" for="">Trade Spend Activity</h3>
+                                <p class="customFontSize-12px m-0">
+                                    "The geography module provides a comprehensive database for storing and
+                                    accessing store locations and channel information, facilitating seamless
+                                    integration and analysis of spatial data."
+                                </p>
+                            </div>
+                            <div class="col col-lg-7 py-2 px-0">
+                                <ul class="p-0 list-unstyled overflow-y-scroll customHeightDropDownLi cs-scrollbar-style">
+                                    <li class="nav-item py-1">
+                                        <a href=""
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Activity Type
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href=""
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Activity Planning
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href=""
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Activity Creation
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href=""
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Activity Approval
+                                        </a>
+                                    </li>
+                                    <!-- add More Sub-Menu items -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+<!-- 4 -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="icon-bold-location me-2"></i>Manage
+                    </a>
+                    <div
+                        class="dropdown-menu  border-0 rounded-4 shadow-sm p-0 mt-2 overflow-hidden customHeightDropDown">
+                        <div class="row m-0">
+                            <div
+                                class="col-lg-5 d-none d-lg-flex flex-column align-items-start justify-content-end bg-primary text-white p-3">
+                                <i class="icon-bold-location me-2 mb-2 fs-1"></i>
+                                <h3 class="fs-4 mb-2 fw-bold" for="">Manage</h3>
                                 <p class="customFontSize-12px m-0">
                                     "The geography module provides a comprehensive database for storing and
                                     accessing store locations and channel information, facilitating seamless
@@ -246,14 +214,24 @@
                                             <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Customer
                                         </a>
                                     </li>
+                                    <li class="nav-item py-1">
+                                        <a href="" class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Geographical Hierarchy
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href="" class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Contract
+                                        </a>
+                                    </li>
                                     <!-- add More Sub-Menu items -->
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </li>
-<!-- 6 -->      
-<li class="nav-item dropdown">
+<!-- 5 -->
+                <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="icon-bold-location me-2"></i>Claims
                     </a>
@@ -275,7 +253,100 @@
                                     <li class="nav-item py-1">
                                         <a href=""
                                             class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
-                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Customer
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Claim Type
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href=""
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Claim Requisition
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href=""
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Claim Status
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href=""
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Claim Approval
+                                        </a>
+                                    </li>
+                                    <!-- add More Sub-Menu items -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+<!-- 6 -->      
+                
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="icon-bold-location me-2"></i>Product
+                    </a>
+                    <div
+                        class="dropdown-menu  border-0 rounded-4 shadow-sm p-0 mt-2 overflow-hidden customHeightDropDown">
+                        <div class="row m-0">
+                            <div
+                                class="col-lg-5 d-none d-lg-flex flex-column align-items-start justify-content-end bg-primary text-white p-3">
+                                <i class="icon-bold-location me-2 mb-2 fs-1"></i>
+                                <h3 class="fs-4 mb-2 fw-bold" for="">Product</h3>
+                                <p class="customFontSize-12px m-0">
+                                    "The geography module provides a comprehensive database for storing and
+                                    accessing store locations and channel information, facilitating seamless
+                                    integration and analysis of spatial data."
+                                </p>
+                            </div>
+                            <div class="col col-lg-7 py-2 px-0">
+                                <ul class="p-0 list-unstyled overflow-y-scroll customHeightDropDownLi cs-scrollbar-style">
+                                    <li class="nav-item py-1">
+                                        <a href="{{route('ShowAllManufacturer')}}"
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Manufacturer
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href="{{ route('ShowAllBussinessUnits') }}"
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Business Unit
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href="{{ route('ShowAllCategories') }}"
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Category
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href="{{ route('ShowAllBrands') }}"
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Brand
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href="{{ route('ShowAllMasterSKU') }}"
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Master SKU
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href="{{ route('ShowAllSKU') }}"
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />SKU
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href=""
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Pricing Grid
+                                        </a>
+                                    </li>
+                                    <li class="nav-item py-1">
+                                        <a href=""
+                                            class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                            <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Price Level
                                         </a>
                                     </li>
                                     <!-- add More Sub-Menu items -->
