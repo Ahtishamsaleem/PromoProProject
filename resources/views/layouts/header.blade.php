@@ -312,13 +312,13 @@
                                         </a>
                                     </li>
                                     <li class="nav-item py-1">
-                                        <a href="#"
+                                        <a href="{{ route('roles.index') }}"
                                             class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
                                             <img class="dropDownImage me-1" src="/images/1-store-edit-request-level-1.svg" alt="" />Assign User Role
                                         </a>
                                     </li>
                                     <li class="nav-item py-1">
-                                        <a href="#"
+                                        <a href="{{ route('permissions.index') }}"
                                             class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
                                             <img class="dropDownImage me-1" src="/images/1-store-edit-request-level-1.svg" alt="" />Add Permission
                                         </a>

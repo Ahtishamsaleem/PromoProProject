@@ -7,7 +7,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; // Import DB facade
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log; 
+use Illuminate\Support\Facades\Log;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -44,7 +45,6 @@ class UserController extends Controller
     {
         try {
             DB::beginTransaction();
-
             // Create the user
             $user = User::create([
                 'user_designation_id' => $request->user_type,
@@ -56,18 +56,35 @@ class UserController extends Controller
                 'password' => Hash::make($request->password),
                 'added_by' => auth()->user()->id, // Assuming the user is being created by an authenticated user
             ]);
+            if($request->user_type == '1')
+            {
+                $user->assignRole(2);
+            }
+            if($request->user_type == '2')
+            {
+                $user->assignRole(3);
+            }
+            if($request->user_type == '3')
+            {
+                $user->assignRole(4);
+            }
+            if($request->user_type == '4')
+            {
+                $user->assignRole(5);
+            }
+            if($request->user_type == '5')
+            {
+                $user->assignRole(6);
+            }
 
             DB::commit();
 
             // Redirect or respond with success message
             return redirect()->route('users')->with('success', 'User created successfully.');
         } catch (\Exception $e) {
-            dd($e->getMessage());
             DB::rollBack();
-
             // Optional: Log the exception
             Log::error('Error creating user: ' . $e->getMessage());
-
             // Redirect or respond with error message
             return redirect()->route('users')->with('error', 'Failed to create user.');
         }
