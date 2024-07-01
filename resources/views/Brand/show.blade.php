@@ -1,6 +1,6 @@
 @extends('layouts.Master-Layout')
 
-@section('title')Edit Brand @endsection
+@section('title')Show Brand @endsection
 
 @section('styles')
     <style>
@@ -16,7 +16,7 @@
         <div class="container-fluid topbarCustomPadding">
 
             <div class="page-title d-flex mb-3 justify-content-bentween">
-                <h3 class="title fw-bold m-0">Edit Brand</h3>
+                <h3 class="title fw-bold m-0">Show Brand</h3>
                 <button type="button" class="btn btn-sm btn-link text-decoration-none text-black p-0 ms-auto"
                         id="showhidebtn">Edit All <i class="icon-outline-arrow-down-1" id="showhidebtn2"></i></button>
             </div>
@@ -27,12 +27,11 @@
                         <a href="{{ route('ShowAllBrands') }}"
                            class="btn btn-outline-link p-0 icon-outline-arrow-left-2 text-primary fs-5 me-1"
                            id="bu-backto-icon"></a>
-                        <span class="fs-6 text-black fw-normal">Edit Brand</span>
+                        <span class="fs-6 text-black fw-normal">Show Brand</span>
                     </div>
                     <div class="main-form-container px-md-5 px-3">
                         <h6 class="title small fw-bold mb-4 text-uppercase">Brand Information:</h6>
-                        <form class="main-form" action="{{route('Brand.update',$Brand->id)}}" method="POST" id="userForm" >
-                        @csrf
+                       
                             <div class="row">
                                 <div class="col-md-7 col-12">
 
@@ -153,17 +152,9 @@
                                         </div>
                                     </div>
 
-                                    <div class="row align-items-center mb-3">
-                                            <div class="col-md-5">
-                                                <button type="submit" class="btn btn-primary btn-primary-gradient text-capitalize px-md-5 px-4" onclick="defaultAlert()">Update Brand </button>
-                                            </div>
-                                        </div>
-
-
 
                                 </div>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>

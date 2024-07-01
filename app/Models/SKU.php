@@ -50,6 +50,6 @@ class SKU extends Model
 
     public function masterSKU()
     {
-        return $this->belongsTo(MasterSKU::class);
+        return $this->belongsTo(MasterSKU::class, 'master_sku_id');
     }
 }

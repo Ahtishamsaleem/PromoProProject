@@ -7,8 +7,8 @@ use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; // Import DB facade
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -96,7 +96,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        if(auth()->user()->can('Update'))
+        if(auth()->user()->can('View'))
         {
             $User = User::find($id);
             return view('User.show',compact('User'));

@@ -36,10 +36,6 @@ Route::middleware(['auth' , 'session.timeout'])->group(function () {
     Route::get('ShowUser/{id}',[UserController::class, 'show'])->name('user.show');
     Route::post('UserUpdate/{id}',[UserController::class, 'update'])->name('users.update');
 
-    Route::get('Brand',[BrandController::class,'index' ])->name('ShowAllBrands');
-    Route::get('MasterSKU',[MasterSKUController::class,'index' ])->name('ShowAllMasterSKU');
-    Route::get('SKU',[SKUController::class,'index' ])->name('ShowAllSKU');
-    
     
     // Manufacturer Routes
     Route::get('Manufacturer',[ManufacturerController::class,'index' ])->name('ShowAllManufacturer');
@@ -59,6 +55,33 @@ Route::middleware(['auth' , 'session.timeout'])->group(function () {
 
 
     Route::get('Category',[CategoryController::class,'index' ])->name('ShowAllCategories');
+    Route::get('Categoriesreation',[CategoryController::class,'create' ])->name('Categories.create');
+    Route::post('CategoriesStore',[CategoryController::class,'store' ])->name('Categories.store');
+    Route::get('Categories/{id}/edit',[CategoryController::class,'edit' ])->name('Categories.edit');
+    Route::post('CategoriesUpdate/{id}',[CategoryController::class,'update' ])->name('Categories.update');
+    Route::get('Categories/{id}',[CategoryController::class,'show' ])->name('Categories.show');
+
+    Route::get('Brand',[BrandController::class,'index' ])->name('ShowAllBrands');
+    Route::get('BrandCreation',[BrandController::class,'create' ])->name('Brand.create');
+    Route::post('BrandStore',[BrandController::class,'store' ])->name('Brand.store');
+    Route::get('Brand/{id}/edit',[BrandController::class,'edit' ])->name('Brand.edit');
+    Route::post('BrandUpdate/{id}',[BrandController::class,'update' ])->name('Brand.update');
+    Route::get('Brand/{id}',[BrandController::class,'show' ])->name('Brand.show');
+
+    Route::get('MasterSKU',[MasterSKUController::class,'index' ])->name('ShowAllMasterSKU');
+    Route::get('MasterSKUCreation',[MasterSKUController::class,'create' ])->name('MasterSKU.create');
+    Route::post('MasterSKUStore',[MasterSKUController::class,'store' ])->name('MasterSKU.store');
+    Route::get('MasterSKU/{id}/edit',[MasterSKUController::class,'edit' ])->name('MasterSKU.edit');
+    Route::post('MasterSKUUpdate/{id}',[MasterSKUController::class,'update' ])->name('MasterSKU.update');
+    Route::get('MasterSKU/{id}',[MasterSKUController::class,'show' ])->name('MasterSKU.show');
+
+
+    Route::get('SKU',[SKUController::class,'index' ])->name('ShowAllSKU');
+    Route::get('SKUCreation',[SKUController::class,'create' ])->name('SKU.create');
+    Route::post('SKUStore',[SKUController::class,'store' ])->name('SKU.store');
+    Route::get('SKU/{id}/edit',[SKUController::class,'edit' ])->name('SKU.edit');
+    Route::post('SKU/{id}',[SKUController::class,'update' ])->name('SKU.update');
+    Route::get('SKU/{id}',[SKUController::class,'show' ])->name('SKU.show');
 
 });
 
