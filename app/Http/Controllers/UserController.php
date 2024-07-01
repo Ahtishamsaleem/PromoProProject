@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EditUserRequest;
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -95,7 +96,15 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        if(auth()->user()->can('Update'))
+        {
+            $User = User::find($id);
+            return view('User.show',compact('User'));
+        }
+        else
+        {
+            return view('AccessDenied.index');
+        }
     }
 
     /**
@@ -103,15 +112,47 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        if(auth()->user()->can('Update'))
+        {
+            $User = User::find($id);
+            return view('User.edit',compact('User'));
+        }
+        else
+        {
+            return view('AccessDenied.index');
+        }
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(EditUserRequest $request, string $id)
     {
-        //
+        try {
+            DB::beginTransaction();
+            // Create the user
+            User::where('id', $id)->update([
+                'user_designation_id' => $request->user_type,
+                'user_name' => $request->username,
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'added_by' => auth()->user()->id, // Assuming the user is being created by an authenticated user
+            ]);
+
+            DB::commit();
+
+            // Redirect or respond with success message
+            return redirect()->route('users')->with('success', 'User Updated successfully.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            // Optional: Log the exception
+            Log::error('Error update user: ' . $e->getMessage());
+            // Redirect or respond with error message
+            return redirect()->route('users')->with('error', 'Failed to Update user.');
+        }
     }
 
     /**

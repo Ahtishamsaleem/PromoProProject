@@ -1,6 +1,6 @@
 @extends('layouts.Master-Layout')
 
-@section('title')Create User @endsection
+@section('title')Create Manufacturer @endsection
 
 @section('body')
 <main class="main-content">
@@ -41,7 +41,7 @@
 							aria-labelledby="distributors-tab" tabindex="0">
 							<div class="grid-container">
 								<div class="add-new-sku-buttons px-3 mb-3">
-									<a type="button" href="{{route('users.creation')}}" class="btn btn-sm px-3 btn-primary me-2" id="add-new-distributor">Add New User</a>
+									<a type="button" href="{{route('manufacturer.create')}}" class="btn btn-sm px-3 btn-primary me-2" id="add-new-distributor">Add New Manufacturer</a>
 								</div>
 								<!-- GRID TABLE -->
 								<table id="paymentcollection-grid" class="table table-striped borderless tableNowrap m-0"
@@ -52,6 +52,7 @@
 											<th>Company Addresse</th>
 											<th>Contact Person</th>
 											<th>Email Address</th>
+                                            <th>Action</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -61,6 +62,10 @@
                                             <td>{{ $value['company_address'] }}</td>
                                             <td>{{ $value['contact_person'] }}</td>
                                             <td>{{ $value['email_address'] }}</td>
+                                            <td>
+                                                <a href="{{ route('manufacturer.show', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"><i class="icon-outline-eye font-size-16 text-primary"></i></a>
+                                                <a href="{{ route('manufacturer.edit', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"> <i class="icon-outline-edit-2 text-primary font-size-14 px-1"></i></a>
+                                            </td>
                                         </tr>
 										@endforeach
 									</tbody>

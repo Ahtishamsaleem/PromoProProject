@@ -28,22 +28,42 @@ Route::get('password/reset', [ForgotPasswordController::class,'sendResetLinkEmai
 Route::get('password/reset/{token}', [ResetPasswordController::class,'showResetForm'])->name('password.reset');
 Route::get('password/reset/{token}', [ResetPasswordController::class,'reset'])->name('password.update');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth' , 'session.timeout'])->group(function () {
     Route::get('Users',[UserController::class, 'index'])->name('users');
     Route::get('UsersCreation',[UserController::class, 'create'])->name('users.creation');
     Route::post('UsersStored',[UserController::class, 'store'])->name('users.store');
+    Route::get('UsersEdit/{id}/edit',[UserController::class, 'edit'])->name('user.edit');
+    Route::get('ShowUser/{id}',[UserController::class, 'show'])->name('user.show');
+    Route::post('UserUpdate/{id}',[UserController::class, 'update'])->name('users.update');
 
-    Route::get('Product',[ManufacturerController::class,'index' ])->name('ShowAllProducts');
-    Route::get('BusinessUnit',[BusinessUnitController::class,'index' ])->name('ShowAllBussinessUnits');
-    Route::get('Category',[CategoryController::class,'index' ])->name('ShowAllCategories');
     Route::get('Brand',[BrandController::class,'index' ])->name('ShowAllBrands');
     Route::get('MasterSKU',[MasterSKUController::class,'index' ])->name('ShowAllMasterSKU');
     Route::get('SKU',[SKUController::class,'index' ])->name('ShowAllSKU');
+    
+    
+    // Manufacturer Routes
     Route::get('Manufacturer',[ManufacturerController::class,'index' ])->name('ShowAllManufacturer');
+    Route::get('ManufacturerCreation',[ManufacturerController::class,'create' ])->name('manufacturer.create');
+    Route::post('ManufacturerStore',[ManufacturerController::class,'store' ])->name('manufacturer.store');
+    Route::get('Manufacturer/{id}/edit',[ManufacturerController::class,'edit' ])->name('manufacturer.edit');
+    Route::post('ManufacturerUpdate/{id}',[ManufacturerController::class,'update' ])->name('manufacturer.update');
+    Route::get('ShowManufacturer/{id}',[ManufacturerController::class,'show' ])->name('manufacturer.show');
+
+
+    Route::get('BusinessUnit',[BusinessUnitController::class,'index' ])->name('ShowAllBussinessUnits');
+    Route::get('BussinessUnitsCreation',[BusinessUnitController::class,'create' ])->name('BussinessUnits.create');
+    Route::post('BussinessUnitsStore',[BusinessUnitController::class,'store' ])->name('BussinessUnits.store');
+    Route::get('BussinessUnits/{id}/edit',[BusinessUnitController::class,'edit' ])->name('BussinessUnits.edit');
+    Route::post('BussinessUnitsUpdate/{id}',[BusinessUnitController::class,'update' ])->name('BussinessUnits.update');
+    Route::get('ShowBussinessUnits/{id}',[BusinessUnitController::class,'show' ])->name('BussinessUnits.show');
+
+
+    Route::get('Category',[CategoryController::class,'index' ])->name('ShowAllCategories');
+
 });
 
 
-    // Check User Role For Adding New User
+// Check User Role For Adding New User
     Route::middleware(['isAdmin'])->group(function () {
         Route::resource('permissions', permissionController::class)->except(['destroy']);
         Route::get('permissions/{id}/destroy', [PermissionController::class, 'destroy'])->name('permissions.destroy');

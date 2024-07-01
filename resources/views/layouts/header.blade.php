@@ -17,7 +17,7 @@
                         class="btn d-flex align-items-center dropdown-toggle custom-down-arrow text-white px-0 py-1 no-hf-effect"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="icon-outline-avatar-user text-white me-2"></i>
-                        <span class="text-white small d-lg-block d-xl-block d-sm-block d-none" for="">{{auth()->user()->name}}</span>
+                        <span class="text-white small d-lg-block d-xl-block d-sm-block d-none" for="">{{auth()->user()->user_name}}</span>
                     </button>
                     <ul
                         class="custom-dropdown-menu dropdown-menu dropdown-menu-end  p-0 overflow-hidden">

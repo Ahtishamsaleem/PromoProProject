@@ -21,10 +21,11 @@ class AdminMiddleware
         /** @var App\Models\User */
 
         $user = Auth::user();
-        if($user->hasRole('Admin|Dealer'))
+        if($user->hasRole('Admin'))
         {
             return $next($request);
         }
-        return redirect('/home')->with('error', 'You are not authorized to perform this action. Please contact the administration.');
+        return view('AccessDenied.index');
+        // return redirect('/home')->with('error', 'You are not authorized to perform this action. Please contact the administration.');
     }
 }

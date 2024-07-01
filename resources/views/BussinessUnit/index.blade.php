@@ -1,6 +1,6 @@
 @extends('layouts.Master-Layout')
 
-@section('title')Create User @endsection
+@section('title')Business Units @endsection
 
 @section('body')
 <main class="main-content">
@@ -28,7 +28,7 @@
 							<li class="nav-item" role="presentation">
 								<button class="nav-link active" id="distributors-tab" data-bs-toggle="tab"
 									data-bs-target="#distributors-tab-pane" type="button" role="tab"
-									aria-controls="distributors-tab-pane" aria-selected="true">BussinessUnit
+									aria-controls="distributors-tab-pane" aria-selected="true">BusinessUnit
 								</button>
 							</li>
 							
@@ -41,16 +41,17 @@
 							aria-labelledby="distributors-tab" tabindex="0">
 							<div class="grid-container">
 								<div class="add-new-sku-buttons px-3 mb-3">
-									<a type="button" href="{{route('users.creation')}}" class="btn btn-sm px-3 btn-primary me-2" id="add-new-distributor">Add New User</a>
+									<a type="button" href="{{route('BussinessUnits.create')}}" class="btn btn-sm px-3 btn-primary me-2" id="add-new-distributor">Add New BusinessUnit</a>
 								</div>
 								<!-- GRID TABLE -->
 								<table id="paymentcollection-grid" class="table table-striped borderless tableNowrap m-0"
 									style="width:100%">
 									<thead>
 										<tr>
-											<th>Business Unit Name/th>
+											<th>Business Unit Name</th>
 											<th>Business Unit Company Code</th>
 											<th>Status</th>
+                                            <th>Action</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -59,6 +60,11 @@
                                             <td>{{ $value['business_unit_name'] }}</td>
                                             <td>{{ $value['business_unit_company_code'] }}</td>
                                             <td>{{ $value['status'] }}</td>
+                                            <td>
+                                                <a href="{{ route('BussinessUnits.show', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"><i class="icon-outline-eye font-size-16 text-primary"></i></a>
+                                                <a href="{{ route('BussinessUnits.edit', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"> <i class="icon-outline-edit-2 text-primary font-size-14 px-1"></i></a>
+                                            </td>
+                                            </td>
                                         </tr>
 										@endforeach
 									</tbody>

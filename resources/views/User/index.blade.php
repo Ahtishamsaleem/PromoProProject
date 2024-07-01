@@ -54,7 +54,7 @@
 											<th>Last Name</th>
 											<th>Phone</th>
 											<th>Email</th>
-											<th>Added By</th>
+                                            <th>Action</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -66,7 +66,10 @@
                                             <td>{{ $value['last_name'] }}</td>
                                             <td>{{ $value['phone'] }}</td>
                                             <td>{{ $value['email'] }}</td>
-                                            <td>{{ $value['added_by'] }}</td>
+                                            <td>
+                                                <a href="{{ route('user.show', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"><i class="icon-outline-eye font-size-16 text-primary"></i></a>
+                                                <a href="{{ route('user.edit', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"> <i class="icon-outline-edit-2 text-primary font-size-14 px-1"></i></a>
+                                            </td>
                                         </tr>
 										@endforeach
 									</tbody>
