@@ -13,6 +13,10 @@ class BusinessUnitController extends Controller
          /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('log.user.action')->only(['create','store', 'update', 'destroy']);
+    }
     public function index()
     {
         if ( auth()->user()->can('View') ) {
@@ -52,13 +56,13 @@ class BusinessUnitController extends Controller
             DB::commit();
 
             // Redirect or respond with success message
-            return redirect()->route('ShowAllBussinessUnits')->with('success', 'BusinessUnit Created successfully.');
+            return redirect()->route('business-units.index')->with('success', 'BusinessUnit Created successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error update user: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('ShowAllBussinessUnits')->with('error', 'Failed to Update user.');
+            return redirect()->route('business-units.index')->with('error', 'Failed to Update user.');
         }
     }
 
@@ -112,13 +116,13 @@ class BusinessUnitController extends Controller
             DB::commit();
 
             // Redirect or respond with success message
-            return redirect()->route('ShowAllBussinessUnits')->with('success', 'BusinessUnit Updated successfully.');
+            return redirect()->route('business-units.index')->with('success', 'BusinessUnit Updated successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error update user: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('ShowAllBussinessUnits')->with('error', 'Failed to Update user.');
+            return redirect()->route('business-units.index')->with('error', 'Failed to Update user.');
         }
     }
 

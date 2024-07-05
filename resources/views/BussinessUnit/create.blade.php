@@ -24,14 +24,14 @@
             <div class="inner-page-content mb-4">
                 <div class="main-grid-container ">
                     <div class="returnback-heading px-3 py-2 d-flex align-items-center mb-3 mt-2">
-                        <a href="{{ route('ShowAllBussinessUnits') }}"
+                        <a href="{{ route('business-units.index') }}"
                            class="btn btn-outline-link p-0 icon-outline-arrow-left-2 text-primary fs-5 me-1"
                            id="bu-backto-icon"></a>
                         <span class="fs-6 text-black fw-normal">Create BussinessUnits</span>
                     </div>
                     <div class="main-form-container px-md-5 px-3">
                         <h6 class="title small fw-bold mb-4 text-uppercase">BussinessUnits Information:</h6>
-                        <form class="main-form" action="{{ route('BussinessUnits.store') }}" method="POST"
+                        <form class="main-form" action="{{ route('business-units.store') }}" method="POST"
                               id="userForm">
                             @csrf
                             <div class="row">

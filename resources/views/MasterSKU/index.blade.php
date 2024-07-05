@@ -8,7 +8,7 @@
 		<!-- BREADCRUMBS -->
 		<nav class="theme-breadcrumbs d-inline-block rounded mt-4 mb-3 bg-transparent p-0" aria-label="breadcrumb">
 			<ol class="breadcrumb m-0">
-				<li class="breadcrumb-item active"><a href="{{route('ShowAllMasterSKU')}}"><i class="icon-bold-profile-2user1 me-1"></i>Master SKU's</a></li>
+				<li class="breadcrumb-item active"><a href="{{route('master-skus.index')}}"><i class="icon-bold-profile-2user1 me-1"></i>Master SKU's</a></li>
 			</ol>
 		</nav>
 		<!-- PAGE TITLE -->
@@ -41,7 +41,7 @@
 							aria-labelledby="distributors-tab" tabindex="0">
 							<div class="grid-container">
 								<div class="add-new-sku-buttons px-3 mb-3">
-									<a type="button" href="{{route('MasterSKU.create')}}" class="btn btn-sm px-3 btn-primary me-2" id="add-new-distributor">Add New MasterSKU</a>
+									<a type="button" href="{{route('master-skus.create')}}" class="btn btn-sm px-3 btn-primary me-2" id="add-new-distributor">Add New MasterSKU</a>
 								</div>
 								<!-- GRID TABLE -->
 								<table id="paymentcollection-grid" class="table table-striped borderless tableNowrap m-0"
@@ -65,8 +65,8 @@
                                             <td>{{ $value['sub_attribute'] }}</td>
                                             <td>{{ $value['status'] }}</td>
                                             <td>
-                                            <a href="{{ route('MasterSKU.show', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"><i class="icon-outline-eye font-size-16 text-primary"></i></a>
-                                            <a href="{{ route('MasterSKU.edit', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"> <i class="icon-outline-edit-2 text-primary font-size-14 px-1"></i></a>
+                                            <a href="{{ route('master-skus.show', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"><i class="icon-outline-eye font-size-16 text-primary"></i></a>
+                                            <a href="{{ route('master-skus.edit', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"> <i class="icon-outline-edit-2 text-primary font-size-14 px-1"></i></a>
                                             </td>
                                         </tr>
 										@endforeach

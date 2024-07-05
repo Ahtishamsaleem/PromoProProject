@@ -6,6 +6,7 @@ use App\Models\Brand;
 use App\Models\BusinessUnit;
 use App\Models\Category;
 use App\Models\Contract;
+use App\Models\Customer;
 use App\Models\Manufacturer;
 use App\Models\MasterSKU;
 use App\Models\SKU;
@@ -34,5 +35,7 @@ class DatabaseSeeder extends Seeder
         Brand::factory()->count(20)->create();
         MasterSKU::factory()->count(20)->create();
         SKU::factory()->count(20)->create();
+
+        Customer::factory()->count(20)->create();
     }
 }

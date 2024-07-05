@@ -209,7 +209,7 @@
                             <div class="col col-lg-7 py-2 px-0">
                                 <ul class="p-0 list-unstyled overflow-y-scroll customHeightDropDownLi cs-scrollbar-style">
                                     <li class="nav-item py-1">
-                                        <a href=""
+                                        <a href="{{route('customers.index')}}"
                                             class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
                                             <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Customer
                                         </a>
@@ -220,7 +220,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item py-1">
-                                        <a href="" class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
+                                        <a href="{{route('contract.index')}}" class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
                                             <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Contract
                                         </a>
                                     </li>
@@ -302,37 +302,37 @@
                             <div class="col col-lg-7 py-2 px-0">
                                 <ul class="p-0 list-unstyled overflow-y-scroll customHeightDropDownLi cs-scrollbar-style">
                                     <li class="nav-item py-1">
-                                        <a href="{{route('ShowAllManufacturer')}}"
+                                        <a href="{{route('manufacturers.index')}}"
                                             class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
                                             <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Manufacturer
                                         </a>
                                     </li>
                                     <li class="nav-item py-1">
-                                        <a href="{{ route('ShowAllBussinessUnits') }}"
+                                        <a href="{{ route('business-units.index') }}"
                                             class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
                                             <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Business Unit
                                         </a>
                                     </li>
                                     <li class="nav-item py-1">
-                                        <a href="{{ route('ShowAllCategories') }}"
+                                        <a href="{{ route('categories.index') }}"
                                             class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
                                             <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Category
                                         </a>
                                     </li>
                                     <li class="nav-item py-1">
-                                        <a href="{{ route('ShowAllBrands') }}"
+                                        <a href="{{ route('brands.index') }}"
                                             class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
                                             <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Brand
                                         </a>
                                     </li>
                                     <li class="nav-item py-1">
-                                        <a href="{{ route('ShowAllMasterSKU') }}"
+                                        <a href="{{ route('master-skus.index') }}"
                                             class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
                                             <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Master SKU
                                         </a>
                                     </li>
                                     <li class="nav-item py-1">
-                                        <a href="{{ route('ShowAllSKU') }}"
+                                        <a href="{{ route('skus.index') }}"
                                             class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
                                             <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />SKU
                                         </a>
@@ -377,7 +377,7 @@
                                 <ul
                                     class="p-0 list-unstyled overflow-y-scroll customHeightDropDownLi cs-scrollbar-style">
                                     <li class="nav-item py-1">
-                                        <a href="{{route('users')}}"
+                                        <a href="{{route('users.index')}}"
                                             class="w-100 nav-link py-1 border-0 bg-transparent d-flex justify-content-start small align-items-center text-black customFontSize-11px">
                                             <img class="dropDownImage me-1" src="/images/9-store-edit-request-level-1.svg" alt="" />Users
                                         </a>

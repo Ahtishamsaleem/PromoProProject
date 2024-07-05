@@ -10,13 +10,17 @@ class Contract extends Model
     use HasFactory;
 
     protected $fillable = [
-        'customer_name',
+        'customer_id',
         'contract_name',
         'uploaded_on',
         'uploaded_by',
+        'contract_details',
+        'start_date',
+        'end_date',
     ];
 
-    protected $dates = [
-        'uploaded_on',
-    ];
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'customer_id');
+    }
 }

@@ -8,7 +8,7 @@
 		<!-- BREADCRUMBS -->
 		<nav class="theme-breadcrumbs d-inline-block rounded mt-4 mb-3 bg-transparent p-0" aria-label="breadcrumb">
 			<ol class="breadcrumb m-0">
-				<li class="breadcrumb-item active"><a href="{{route('ShowAllSKU')}}"><i class="icon-bold-profile-2user1 me-1"></i>SKU's</a></li>
+				<li class="breadcrumb-item active"><a href="{{route('skus.index')}}"><i class="icon-bold-profile-2user1 me-1"></i>SKU's</a></li>
 			</ol>
 		</nav>
 		<!-- PAGE TITLE -->
@@ -41,7 +41,7 @@
 							aria-labelledby="distributors-tab" tabindex="0">
 							<div class="grid-container">
 								<div class="add-new-sku-buttons px-3 mb-3">
-									<a type="button" href="{{route('SKU.create')}}" class="btn btn-sm px-3 btn-primary me-2" id="add-new-distributor">Add New SKU</a>
+									<a type="button" href="{{route('skus.create')}}" class="btn btn-sm px-3 btn-primary me-2" id="add-new-distributor">Add New SKU</a>
 								</div>
 								<!-- GRID TABLE -->
 								<table id="paymentcollection-grid" class="table table-striped borderless tableNowrap m-0"
@@ -66,7 +66,7 @@
 									</thead>
 									<tbody>
 										@foreach($SKU as $key => $value)
-                                        <tr>
+                                        <tr data-row-id="{{ $value->id }}">
                                             <td>{{ $value['manufacturer_id'] }}</td>
                                             <td>{{ $value['business_unit_id'] }}</td>
                                             <td>{{ $value['category_id'] }}</td>
@@ -81,8 +81,8 @@
                                             <td>{{ $value['sub_attribute'] }}</td>
                                             <td>{{ $value['status'] }}</td>
                                             <td>
-                                            <a href="{{ route('SKU.show', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"><i class="icon-outline-eye font-size-16 text-primary"></i></a>
-                                            <a href="{{ route('SKU.edit', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"> <i class="icon-outline-edit-2 text-primary font-size-14 px-1"></i></a>
+                                            <a href="{{ route('skus.show', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"><i class="icon-outline-eye font-size-16 text-primary"></i></a>
+                                            <a href="{{ route('skus.edit', $value->id) }}" class="btn btn-sm border-0 p-0" type="button"> <i class="icon-outline-edit-2 text-primary font-size-14 px-1"></i></a>
                                             </td>
                                         </tr>
 										@endforeach
@@ -159,8 +159,20 @@
                     },
                 },
                 items: {
-                    view: { name: "View Record" },
-                    edit: { name: "Edit Record" },
+                    "view": {
+                        name: "View Record",
+                        callback: function (key, options) {
+                            var rowId = $(this).data('row-id'); // Assuming each row has a data attribute with its ID
+                            window.location.href = '/skus/' + rowId; // Construct the URL
+                        }
+                    },
+                    "edit": {
+                        name: "Edit Record",
+                        callback: function (key, options) {
+                            var rowId = $(this).data('row-id'); // Assuming each row has a data attribute with its ID
+                            window.location.href = '/skus/' + rowId + '/edit'; // Construct the URL
+                        }
+                    }
                 },
             });
         });

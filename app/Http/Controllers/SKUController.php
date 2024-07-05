@@ -19,6 +19,10 @@ class SKUController extends Controller
          /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('log.user.action')->only(['create','store', 'update', 'destroy']);
+    }
     public function index()
     {
         if ( auth()->user()->can('View')) {
@@ -68,13 +72,13 @@ class SKUController extends Controller
             ]);
             DB::commit();
             // Redirect or respond with success message
-            return redirect()->route('ShowAllSKU')->with('success', 'SKU created successfully.');
+            return redirect()->route('skus.index')->with('success', 'SKU created successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error creating MasterSKU: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('ShowAllSKU')->with('error', 'Failed to create MasterSKU.');
+            return redirect()->route('skus.index')->with('error', 'Failed to create MasterSKU.');
         }
     }
 
@@ -135,13 +139,13 @@ class SKUController extends Controller
             ]);
             DB::commit();
             // Redirect or respond with success message
-            return redirect()->route('ShowAllSKU')->with('success', 'SKU Updated successfully.');
+            return redirect()->route('skus.index')->with('success', 'SKU Updated successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error update SKU: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('ShowAllSKU')->with('error', 'Failed to Update SKU.');
+            return redirect()->route('skus.index')->with('error', 'Failed to Update SKU.');
         }
     }
 

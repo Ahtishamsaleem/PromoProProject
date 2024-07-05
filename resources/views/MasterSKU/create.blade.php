@@ -21,12 +21,12 @@
     <div class="inner-page-content mb-4 ">
         <div class="main-grid-container ">					
                         <div class="returnback-heading px-3 py-2 d-flex align-items-center mb-3 mt-2">
-                            <a href="{{route('ShowAllMasterSKU')}}" class="btn btn-outline-link p-0 icon-outline-arrow-left-2 text-primary fs-5 me-1" id="bu-backto-icon"></a>
+                            <a href="{{route('master-skus.index')}}" class="btn btn-outline-link p-0 icon-outline-arrow-left-2 text-primary fs-5 me-1" id="bu-backto-icon"></a>
                             <span class="fs-6 text-black fw-normal ">Add MasterSKU</span>
                         </div>
                         <div class="main-form-container px-md-5 px-3">
                             <h6 class="title small fw-bold mb-4 text-uppercase">MasterSKU Information:</h6>
-                            <form class="main-form" action="{{route('MasterSKU.store')}}" method="POST" id="userForm" >
+                            <form class="main-form" action="{{route('master-skus.store')}}" method="POST" id="userForm" >
                             @csrf
                                 <div class="row">
                                     <div class="col-md-7 col-12">

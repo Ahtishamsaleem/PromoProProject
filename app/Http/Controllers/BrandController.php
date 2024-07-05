@@ -15,6 +15,10 @@ class BrandController extends Controller
      /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('log.user.action')->only(['create','store', 'update', 'destroy']);
+    }
     public function index()
     {
         if ( auth()->user()->can('View')) {
@@ -34,7 +38,7 @@ class BrandController extends Controller
         $BusinessUnit = BusinessUnit::all();
         $Category = Category::all();
         
-        return view('Category.create', compact('BusinessUnit', 'Category'));
+        return view('Brand.create', compact('BusinessUnit', 'Category'));
     }
 
     /**
@@ -54,13 +58,13 @@ class BrandController extends Controller
             ]);
             DB::commit();
             // Redirect or respond with success message
-            return redirect()->route('ShowAllBrands')->with('success', 'Brand created successfully.');
+            return redirect()->route('brands.index')->with('success', 'Brand created successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error creating user: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('ShowAllBrands')->with('error', 'Failed to create user.');
+            return redirect()->route('brands.index')->with('error', 'Failed to create user.');
         }
     }
 
@@ -88,7 +92,7 @@ class BrandController extends Controller
         if(auth()->user()->can('Update'))
         {
             $Brand = Brand::with('businessUnit','category')->find($id);
-            return view('User.edit',compact('Brand'));
+            return view('Brand.edit',compact('Brand'));
         }
         else
         {
@@ -115,13 +119,13 @@ class BrandController extends Controller
             DB::commit();
 
             // Redirect or respond with success message
-            return redirect()->route('ShowAllBrands')->with('success', 'Brand Updated successfully.');
+            return redirect()->route('brands.index')->with('success', 'Brand Updated successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error update user: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('ShowAllBrands')->with('error', 'Failed to Update user.');
+            return redirect()->route('brands.index')->with('error', 'Failed to Update user.');
         }
     }
 

@@ -56,7 +56,7 @@
     <div class="inner-page-content mb-4 ">
         <div class="main-grid-container ">					
                         <div class="returnback-heading px-3 py-2 d-flex align-items-center mb-3 mt-2">
-                            <a href="{{route('users')}}" class="btn btn-outline-link p-0 icon-outline-arrow-left-2 text-primary fs-5 me-1" id="bu-backto-icon"></a>
+                            <a href="{{route('users.index')}}" class="btn btn-outline-link p-0 icon-outline-arrow-left-2 text-primary fs-5 me-1" id="bu-backto-icon"></a>
                             <span class="fs-6 text-black fw-normal ">Add New User</span>
                         </div>
                         <div class="main-form-container px-md-5 px-3">
@@ -155,7 +155,7 @@
                                                 <div class="addtional-info pt-3 px-3 rounded bg-white custom-primary-border">
                                                     <div class="row align-items-center mb-3">
                                                         <div class="col-md-5">
-                                                            <label for="BussinessUnitAddedBy" class="form-label small text-capitalize">Bussiness unit added by:</label>
+                                                            <label for="BussinessUnitAddedBy" class="form-label small text-capitalize">User added by:</label>
                                                         </div>
                                                         <div class="col-md-7">
                                                             <input type="text" class="form-control form-control-sm default-state custominput-padding" value="salesfloadmin" placeholder="" disabled />
@@ -163,7 +163,7 @@
                                                     </div>
                                                     <div class="row align-items-center mb-3">
                                                         <div class="col-md-5">
-                                                            <label for="BussinessUnitAddedOn" class="form-label small text-capitalize">bussiness unit added on:</label>
+                                                            <label for="BussinessUnitAddedOn" class="form-label small text-capitalize">User added on:</label>
                                                         </div>
                                                         <div class="col-md-7">
                                                             <input type="text" class="form-control form-control-sm default-state custominput-padding" value="August 7, 2023 at 3:39 pm" placeholder="" disabled />

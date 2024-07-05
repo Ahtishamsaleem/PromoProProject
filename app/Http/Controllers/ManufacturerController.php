@@ -14,6 +14,10 @@ class ManufacturerController extends Controller
          /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('log.user.action')->only(['create','store', 'update', 'destroy']);
+    }
     public function index()
     {
         if ( auth()->user()->can('View')) {
@@ -51,13 +55,13 @@ class ManufacturerController extends Controller
             DB::commit();
 
             // Redirect or respond with success message
-            return redirect()->route('ShowAllManufacturer')->with('success', 'Manufacturer created successfully.');
+            return redirect()->route('manufacturers.index')->with('success', 'Manufacturer created successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error creating user: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('ShowAllManufacturer')->with('error', 'Failed to create user.');
+            return redirect()->route('manufacturers.index')->with('error', 'Failed to create user.');
         }
     }
 
@@ -112,13 +116,13 @@ class ManufacturerController extends Controller
             DB::commit();
 
             // Redirect or respond with success message
-            return redirect()->route('ShowAllManufacturer')->with('success', 'Manufacturer Updated successfully.');
+            return redirect()->route('manufacturers.index')->with('success', 'Manufacturer Updated successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error update user: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('ShowAllManufacturer')->with('error', 'Failed to Update user.');
+            return redirect()->route('manufacturers.index')->with('error', 'Failed to Update user.');
         }
     }
 

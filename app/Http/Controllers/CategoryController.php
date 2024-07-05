@@ -14,6 +14,10 @@ class CategoryController extends Controller
          /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('log.user.action')->only(['create','store', 'update', 'destroy']);
+    }
     public function index()
     {
         if ( auth()->user()->can('View') ) {
@@ -52,13 +56,13 @@ class CategoryController extends Controller
             DB::commit();
 
             // Redirect or respond with success message
-            return redirect()->route('ShowAllCategories')->with('success', 'Category Created successfully.');
+            return redirect()->route('categories.index')->with('success', 'Category Created successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error update user: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('ShowAllCategories')->with('error', 'Failed to Update user.');
+            return redirect()->route('categories.index')->with('error', 'Failed to Update user.');
         }
     }
 
@@ -114,13 +118,13 @@ class CategoryController extends Controller
             DB::commit();
 
             // Redirect or respond with success message
-            return redirect()->route('ShowAllCategories')->with('success', 'Category Updated successfully.');
+            return redirect()->route('categories.index')->with('success', 'Category Updated successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error update user: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('ShowAllCategories')->with('error', 'Failed to Update user.');
+            return redirect()->route('categories.index')->with('error', 'Failed to Update user.');
         }
     }
 

@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('contracts', function (Blueprint $table) {
             $table->id();
-            $table->string('customer_name');
+            $table->foreignId('customer_id')->constrained('customers');
             $table->string('contract_name');
-            $table->timestamp('uploaded_on')->nullable();
+            $table->string('uploaded_on')->nullable();
             $table->string('uploaded_by')->nullable();
+            $table->string('contract_details');
+            $table->string('start_date');
+            $table->string('end_date');
             $table->timestamps();
         });
     }

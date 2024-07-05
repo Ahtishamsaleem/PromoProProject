@@ -16,6 +16,10 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('log.user.action')->only(['create','store', 'update', 'destroy']);
+    }
     public function index()
     {
         if( auth()->user()->user_designation_id == '1' )
@@ -81,13 +85,13 @@ class UserController extends Controller
             DB::commit();
 
             // Redirect or respond with success message
-            return redirect()->route('users')->with('success', 'User created successfully.');
+            return redirect()->route('users.index')->with('success', 'User created successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error creating user: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('users')->with('error', 'Failed to create user.');
+            return redirect()->route('users.index')->with('error', 'Failed to create user.');
         }
     }
 
@@ -145,13 +149,13 @@ class UserController extends Controller
             DB::commit();
 
             // Redirect or respond with success message
-            return redirect()->route('users')->with('success', 'User Updated successfully.');
+            return redirect()->route('users.index')->with('success', 'User Updated successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error update user: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('users')->with('error', 'Failed to Update user.');
+            return redirect()->route('users.index')->with('error', 'Failed to Update user.');
         }
     }
 

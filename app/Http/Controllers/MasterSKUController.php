@@ -18,6 +18,10 @@ class MasterSKUController extends Controller
          /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('log.user.action')->only(['create','store', 'update', 'destroy']);
+    }
     public function index()
     {
         if ( auth()->user()->can('View')) {
@@ -64,13 +68,13 @@ class MasterSKUController extends Controller
             ]);
             DB::commit();
             // Redirect or respond with success message
-            return redirect()->route('ShowAllMasterSKU')->with('success', 'User created successfully.');
+            return redirect()->route('master-skus.index')->with('success', 'User created successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error creating MasterSKU: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('ShowAllMasterSKU')->with('error', 'Failed to create MasterSKU.');
+            return redirect()->route('master-skus.index')->with('error', 'Failed to create MasterSKU.');
         }
     }
 
@@ -127,13 +131,13 @@ class MasterSKUController extends Controller
             ]);
             DB::commit();
             // Redirect or respond with success message
-            return redirect()->route('ShowAllMasterSKU')->with('success', 'MasterSKU Updated successfully.');
+            return redirect()->route('master-skus.index')->with('success', 'MasterSKU Updated successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             // Optional: Log the exception
             Log::error('Error update MasterSKU: ' . $e->getMessage());
             // Redirect or respond with error message
-            return redirect()->route('ShowAllMasterSKU')->with('error', 'Failed to Update MasterSKU.');
+            return redirect()->route('master-skus.index')->with('error', 'Failed to Update MasterSKU.');
         }
     }
 

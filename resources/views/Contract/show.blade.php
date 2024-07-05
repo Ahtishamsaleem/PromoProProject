@@ -1,6 +1,6 @@
 @extends('layouts.Master-Layout')
 
-@section('title')Edit Contract @endsection
+@section('title')Show Contract @endsection
 
 @section('styles')
 <style>
@@ -14,7 +14,7 @@
 <div class="container-fluid topbarCustomPadding">
 
     <div class="page-title d-flex mb-3 justify-content-bentween">
-        <h3 class="title fw-bold m-0">Edit Contract</h3>
+        <h3 class="title fw-bold m-0">Show Contract</h3>
         <button type="button" class="btn btn-sm btn-link text-decoration-none text-black p-0 ms-auto" id="showhidebtn">Show All <i class="icon-outline-arrow-down-1" id="showhidebtn2"></i></button>
     </div>
 
@@ -22,13 +22,11 @@
         <div class="main-grid-container ">					
                         <div class="returnback-heading px-3 py-2 d-flex align-items-center mb-3 mt-2">
                             <a href="{{route('contract.index')}}" class="btn btn-outline-link p-0 icon-outline-arrow-left-2 text-primary fs-5 me-1" id="bu-backto-icon"></a>
-                            <span class="fs-6 text-black fw-normal ">Edit Contract</span>
+                            <span class="fs-6 text-black fw-normal ">Show Contract</span>
                         </div>
                         <div class="main-form-container px-md-5 px-3">
                             <h6 class="title small fw-bold mb-4 text-uppercase">Contract Information:</h6>
-                            <form class="main-form" action="{{route('contract.update',$contract->id)}}" method="POST" id="userForm" >
-                                @csrf
-                                @method('PUT')
+                           
                                 <div class="row">
                                     <div class="col-md-7 col-12">
                                         <div class="row align-items-center mb-3">
@@ -48,6 +46,7 @@
                                                 @enderror
                                             </div>
                                         </div>  
+                                       
                                         <div class="row align-items-center mb-3">
                                             <div class="col-md-5">
                                                 <label for="contract_name" class="form-label small">Contract Name:</label>
@@ -65,7 +64,7 @@
                                             </div>
                                             <div class="col-md-7">
                                                 <div class="input-icon default-datepicker">
-                                                    <input type="text" class="form-control form-control-sm customdate-input form-control-datepicker @error('uploaded_on') is-invalid @enderror" value="{{$contract->uploaded_on}}" id="uploaded_on" name="uploaded_on"  style="max-width: 200px;" />
+                                                    <input type="text" class="form-control form-control-sm customdate-input form-control-datepicker @error('uploaded_on') is-invalid @enderror" value="{{$contract->uploaded_on}}" id="uploaded_on" name="uploaded_on" placeholder="DD/MM/YY" style="max-width: 200px;" />
                                                 </div>
                                             @error('uploaded_on')
                                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -77,7 +76,7 @@
                                                 <label for="uploaded_by" class="form-label small">Uploaded By</label>
                                             </div>
                                             <div class="col-md-7">
-                                            <input type="text" class="form-control form-control-sm @error('uploaded_by') is-invalid @enderror" id="uploaded_by" value="{{$contract->uploaded_by}}" name="uploaded_by" />
+                                                 <input type="text" class="form-control form-control-sm @error('uploaded_by') is-invalid @enderror" id="uploaded_by" value="{{$contract->uploaded_by}}" name="uploaded_by" />
                                             @error('uploaded_by')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -100,7 +99,7 @@
                                             </div>
                                             <div class="col-md-7">
                                                 <div class="input-icon default-datepicker">
-                                                    <input type="text" class="form-control form-control-sm customdate-input form-control-datepicker @error('start_date') is-invalid @enderror" value="{{$contract->start_date}}" id="start_date" name="start_date"  style="max-width: 200px;" />
+                                                    <input type="text" class="form-control form-control-sm customdate-input form-control-datepicker @error('start_date') is-invalid @enderror" value="{{$contract->start_date}}" id="start_date" name="start_date" placeholder="DD/MM/YY" style="max-width: 200px;" />
                                                 </div>
                                             @error('start_date')
                                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -113,13 +112,14 @@
                                             </div>
                                             <div class="col-md-7">
                                                 <div class="input-icon default-datepicker">
-                                                    <input type="text" class="form-control form-control-sm customdate-input form-control-datepicker @error('end_date') is-invalid @enderror" value="{{$contract->end_date}}" id="end_date" name="end_date"  style="max-width: 200px;" />
+                                                    <input type="text" class="form-control form-control-sm customdate-input form-control-datepicker @error('end_date') is-invalid @enderror" value="{{$contract->end_date}}" id="end_date" name="end_date" placeholder="DD/MM/YY" style="max-width: 200px;" />
                                                 </div>
                                             @error('end_date')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                             </div>
                                         </div>
+
                                         <div class="row align-items-center mb-3 mt-4 ">
                                             <h6 class="mb-3 text-capitalize fw-medium">Addtional Information:</h6>
                                             <div class="col-md-12">
@@ -143,14 +143,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row align-items-center mb-3">
-                                            <div class="col-md-5">
-                                                <button type="submit" class="btn btn-primary btn-primary-gradient text-capitalize px-md-5 px-4" onclick="defaultAlert()">Update Contract </button>
-                                            </div>
-                                        </div>
+
+                                      
+
                                     </div>
                                 </div>
-                            </form>
                         </div>
                     </div>
             </div>
@@ -167,7 +164,7 @@
     $('#uploaded_on').daterangepicker({
         autoUpdateInput: true,
         singleDatePicker: true,
-        showDropdowns: true,
+        showDropdowns: false,
         autoApply: true,
         maxYear: parseInt(moment().format("YYYY"), 10),
         showButtonPanel: true,
@@ -176,23 +173,23 @@
         },
     });
     $('#start_date').daterangepicker({
-        autoUpdateInput: true,
+        autoUpdateInput: false,
         singleDatePicker: true,
-        showDropdowns: true,
-        autoApply: true,
+        showDropdowns: false,
+        autoApply: false,
         maxYear: parseInt(moment().format("YYYY"), 10),
-        showButtonPanel: true,
+        showButtonPanel: false,
         locale: {
             format: "DD/MM/YYYY",
         },
     });
     $('#end_date').daterangepicker({
-        autoUpdateInput: true,
+        autoUpdateInput: false,
         singleDatePicker: true,
-        showDropdowns: true,
-        autoApply: true,
+        showDropdowns: false,
+        autoApply: false,
         maxYear: parseInt(moment().format("YYYY"), 10),
-        showButtonPanel: true,
+        showButtonPanel: false,
         locale: {
             format: "DD/MM/YYYY",
         },
